@@ -21,13 +21,23 @@ public:
 	   // }
 	   // if(ans==0){
 	   //     return 0;
-	   // }
+	   // } //this syntax is imp for find function in map and in set
 	   // return 1;
-	   set<char>s1(a.begin(),a.end());
-	   set<char>s2(b.begin(),b.end());
-	   for(int i=0;i<a.size();i++){
-	       int key=a[i];
-	       if(s2.find(key)!=s2.end()){
+	   //set<char>s1(a.begin(),a.end());
+	   //set<char>s2(b.begin(),b.end());
+	   //for(int i=0;i<a.size();i++){
+	   //    int key=a[i];
+	   //    if(s2.find(key)!=s2.end()){
+	   //        return 1;
+	   //    } how to use find function with the set
+	   //}
+	   unordered_map<char,int>mp;
+	   for(auto x:a){
+	       mp[x]++;
+	   }
+	   
+	   for(int i=0;i<b.size();i++){
+	       if(mp[b[i]]!=0){
 	           return 1;
 	       }
 	   }
